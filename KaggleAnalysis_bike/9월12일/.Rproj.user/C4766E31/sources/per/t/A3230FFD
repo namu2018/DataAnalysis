@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536714513623.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "316874291",
+    "id" : "A3230FFD",
+    "lastKnownWriteTime" : 1536727748,
+    "last_content_update" : 1536727748132,
+    "path" : "E:/choi_dontouch/Github/DataAnalysis/KaggleAnalysis_bike/9월12일/randomfrost.r",
+    "project_path" : "randomfrost.r",
+    "properties" : {
+        "cursorPosition" : "41,31",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

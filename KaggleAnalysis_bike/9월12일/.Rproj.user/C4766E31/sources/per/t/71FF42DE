@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536711206795.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2516923032",
+    "id" : "71FF42DE",
+    "lastKnownWriteTime" : 1536641384,
+    "last_content_update" : 1536641384,
+    "path" : "~/choi_dontouch/R-basic/공공자전거 실습.r",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "19,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

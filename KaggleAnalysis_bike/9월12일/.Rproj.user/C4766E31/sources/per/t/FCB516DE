@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536726088733.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1294740419",
+    "id" : "FCB516DE",
+    "lastKnownWriteTime" : 1536726123,
+    "last_content_update" : 1536726123,
+    "path" : "E:/choi_dontouch/Github/DataAnalysis/KaggleAnalysis_bike/9월12일/정규화하기.r",
+    "project_path" : "정규화하기.r",
+    "properties" : {
+        "cursorPosition" : "0,4",
+        "scrollLine" : "0",
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

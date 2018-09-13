@@ -1,0 +1,98 @@
+install.packages("foreign")
+install.packages("dplyr")
+install.packages("readxl")
+
+library(foreign)
+library(dplyr)
+library(readxl)
+
+
+getwd()
+setwd("C:/Users/ktm/Downloads/all/choi/bike")
+bike <- read.csv("train.csv")
+bike_t <- read.csv("test.csv")
+result<- read.csv("sampleSubmission.csv")
+head(result)
+bike$month <- as.factor(substring(bike$datetime,6,7))
+train$time <- as.factor(substring(train$datetime,1,4))
+bike$hour <-as.factor(substring(bike$datetime,12,13)) 
+bike_t$hour <-as.factor(substring(bike_t$datetime,12,13)) 
+bike$day <-as.factor(weekdays(as.Date(bike$datetime))) 
+bike_t$day <-as.factor(weekdays(as.Date(bike_t$datetime))) 
+bike$year <-as.factor(format(as.Date(as.Date(bike$datetime), format="%d/%m/%Y"),"%Y")) 
+test$year <-as.factor(format(as.Date(as.Date(test$datetime), format="%d/%m/%Y"),"%Y")) 
+bike$date <-as.Date(bike$datetime) 
+test$date <-as.Date(test$datetime)
+str(bike)
+###결측치
+bike_2011$month <- as.factor(substring(bike_2011$datetime,6,7))
+bike_2011 <- filter(bike,bike$year=="2011")
+head(bike_2011)
+bike_2012 <- filter(bike, bike$year=="2012")
+head(bike_2012)
+
+
+is(bike_2011$hour)
+
+plot(as.integer(bike$hour),bike$registered)
+plot(as.integer(bike_2012$hour), bike_2012$registered)
+lines(bike$hour,bike_2011$registered, col="red", lty="dashed")
+lines(bike$count, col="blue", lty="dashed")
+title(main="2011년 2012년 이용수")
+title(xlab="hour", ylab="이용자수")
+
+day_sum_cnt_2011 <- bike_2011 %>%
+    group_by(day) %>%
+    summarize(sum_count=sum(count))
+day_sum_cnt_2011
+rc_2011_01 <- filter(bike_2011, bike_2011$month=='01')
+
+dim(rc_2011_01)
+
+day_sum_cnt_2012 <- bike_2012 %>%
+  group_by(day) %>%
+  summarize(sum_count=sum(count))
+day_sum_cnt_2012
+tail(bike_2011)
+tail(bike_2012)
+par(mfrow=c(2,2))
+plot(day_sum_cnt_2011,type="l")
+plot(day_sum_cnt_2012,type="l")
+head(bike)
+dim(bike_2011)
+dim(bike_2012)
+lines(day_sum_cnt_2012, col="red", lty="dashed")
+plot(bike_2011$weather, bike_2011$count)
+str(bike)
+library(Amelia)
+table(is.na(train))
+str(train)
+hour_count <- bike %>%
+  filter(!is.na(count))%>%
+  group_by(bike) %>%
+  summarize(sum_casual=sum(count) )
+hour_count
+
+table(bike_20$hour)
+ggplot(data=hour_cas, aes(x=hour, y=sum_casual))+ geom_bar(stat="identity") 
+
+plot(bike)
+plot(as.integer(bike$hour), bike$atemp)
+
+plot(bike$hour, bike$registered)
+
+
+barplot(bike_2011$temp)
+title(main="온도의 분포")
+boxplot(train$season)
+boxplot(bike$temp, bike$atemp)
+title(main="실제온도와 체감온도의 차이")
+boxplot(train$workingday)
+plot()
+#회귀모델
+#로지스틱회귀모델
+#의사결정 모델
+#전처리- 결측치, 새로운 변수, 이상치 제거, 표준화 하기기
+
+#시각화
+#전차리 후 모델링 적용 차이

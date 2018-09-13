@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536711027407.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4070272008",
+    "id" : "DC2D00EF",
+    "lastKnownWriteTime" : 1536727696,
+    "last_content_update" : 1536727696069,
+    "path" : "E:/choi_dontouch/Github/DataAnalysis/KaggleAnalysis_bike/9월12일/Heatmap.r",
+    "project_path" : "Heatmap.r",
+    "properties" : {
+        "cursorPosition" : "12,23",
+        "scrollLine" : "29",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,50 @@
+
+##회귀 모델 확인  
+a<-seq(50,350,by=50)
+b<-seq(100,700, by=100) 
+a;b
+L<- lm(b~a)
+summary(L)
+plot(b~a, xlab='월소득', ylab='월소득')
+abline(L, col='red')
+
+a<-c(seq(50,350,by=50), 429,490)
+b<-c(seq(100,700, by=100) ,800,900)
+
+L2<- lm(b~a)
+plot(b~a)
+abline(L, col='yellow')
+L2
+summary(L2)
+
+names(L)
+L$coefficients
+L$residuals
+
+###step() 함수를 이용해서 변수 선택하기
+##both, backward, forward
+df<- mtcars
+Lm<-lm(mpg~., data=df)
+summary(Lm)
+selLm <- step(Lm, direction='both')
+selLm
+
+###regsubsets(), leap() 
+install.packages("leaps")
+library(leaps)
+df1<-mtcars
+slm<-regsubsets(mpg~., data=df1, nvmax=10, method="exhaustive")
+summary(slm)
+coef(slm,3)
+
+##1행: 변수가 한개일떄 최적모형
+##10행: 변수가 10개일떄 최적모형
+BestBic<- summary(slm)$bic
+BestBic
+##가장낮은값이 좋은 모델
+
+MinV <- which.min(BestBic)
+MinV
+plot(BestBic, type='b')##변수의 선택 계수
+points(MinV, BestBic[MinV], cex=2, col='red', pch=20)
+coef(slm,3)
