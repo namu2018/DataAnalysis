@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536885178626.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3073032711",
+    "id" : "231EC9D4",
+    "lastKnownWriteTime" : 1536798032,
+    "last_content_update" : 1536798032,
+    "path" : "~/choi_dontouch/R-basic/9월11일/다중회귀분석에서 변수선택 방법.r",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "37,21",
+        "scrollLine" : "22"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

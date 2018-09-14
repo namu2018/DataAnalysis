@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536888228853.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2924769827",
+    "id" : "EC76EB02",
+    "lastKnownWriteTime" : 1536888155,
+    "last_content_update" : 1536888155,
+    "path" : "C:/Users/ktm/Downloads/00_Review_R_0910.r",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "16,23",
+        "scrollLine" : "26"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

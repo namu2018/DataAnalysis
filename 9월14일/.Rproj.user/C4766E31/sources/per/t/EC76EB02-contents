@@ -1,0 +1,82 @@
+print(10)
+a=10
+
+## 01. 시각화
+## ggplot - 시각화 라이브러리.
+## barplot(이산형변수, 범주형변수), 
+## hist(연속형 변수)
+## scatter plot(산점도)
+## boxplot(중앙값, 25%, 75%, 이상치) - 
+##  이상치를 확인하는 기준 - IQR = 75%-25%
+##  IQR 1.5배를 넘어가는 지점.
+## barplot과 hist의 차이 - 밀도 개념이 들어간다.
+##  남자 : 5, 여자 : 5  0.5, 0.5
+##  종속변수, 독립변수
+##  종속변수 : 
+## 그래프를 그리는 세가지 방법
+##   01. 빠르게 데이터 탐색 = 일반 plot
+##   02. 보다 정교하게 데이터 특징 찾기 - ggplot 
+##   03. 보고서용 시각화 - d3,...
+## 고수준, 저수준
+## 
+iris
+par(mfrow=c(2,2))
+boxplot(iris$Sepal.Length, main="boxplot of Sepal.Length")
+boxplot(iris$Sepal.Width , ylab='SepalWidth')
+boxplot(iris$Petal.Length)
+boxplot(iris$Petal.Width)
+
+## 02. dplyr
+## 패키지 
+## foreign : read.spss
+## devtool : 개발안된 github 공개된 패키지 설치할 때,
+## knitr   : R markdown 용
+## readxl  :
+## plyr    : dplyr 버전의 예전버전
+## Amelia::missmap() : 결측치 확인
+
+## dplyr 
+# rename() - 컬럼명 변경하기 
+# filter() - 원하는 조건에 만족하는 행 추출
+# mutate() - 파생변수 만들기 
+# arrange() - 순서 정렬
+# group_by()  - 그룹을 구분시킬 때, 
+# summarise() - 요약 값 
+
+## 탐색용 함수
+dim(iris)  #  행과 열
+str(iris)  #  자료형 구조 확인
+summary(iris)   # 요약 값 보기
+colnames(iris)  # 컬럼명 확인 - rownames()
+names(iris)     # 컬럼명 확인 
+head(iris)      # 6행 보기 
+tail(iris)      # 뒤에서 6행 보기 
+is(iris$Sepal.Width) # 자료형 확인 - class()
+
+##  기술 통계
+mean(iris$Sepal.Length)
+var(iris$Sepal.Length)
+sd(iris$Sepal.Length)
+median(iris$Sepal.Length)
+quantile(iris$Sepal.Length)
+
+## 기본함수
+# table(iris$Species, )  
+# rbind() 
+# cbind()
+# read.csv
+# read.spss
+# read.xml
+# read.json
+# read.table(df, sep=',')
+# scale() - 정규화 할때, 사용
+#   - 데이터를 정규분포화 시킨다. 
+#   - 평균 : 0, 표준편차로 나눈다.
+# cor()
+scale(iris$Sepal.Length)
+
+df <- iris[ ,-5]
+cor(df)
+
+iris$Species
+table(iris$Species)
