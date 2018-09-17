@@ -1,0 +1,10 @@
+table(trA$season)
+barplot(table(trA$season))
+boxplot(testA$windspeed)
+
+a <- sqldf('select * from trA where windspeed=0')
+library(sqldf)
+install.packages('sqldf')
+a
+b <- sqldf('select * from testA where humidity=0')
+b

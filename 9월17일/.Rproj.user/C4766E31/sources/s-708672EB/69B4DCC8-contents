@@ -1,0 +1,92 @@
+install.packages("randomForest")
+library(randomForest)
+#######Correlation(상관) plot between fileds
+sel_r <- c("","","","","temp","atemp","humidity","windspeed", "registered","day", "year" )
+sel_c <- c("temp","atemp","humidity","windspeed", "casual" , "day","year")
+trAA_c <- trAA[,sel_c]
+trAA_r <- trAA[,sel_r]
+#trAA_c$season <- as.integer(trAA_c$)
+
+sel_c
+##상관계수 만들기
+tr_cor_c=cor(trAA_c)
+tr_cor_r=cor(trAA_r)
+install.packages("corrplot")
+library(corrplot)
+corrplot(tr_cor)
+par(mfrow=c(1,2))
+
+
+corrplot(cor(tr_cor_c), method="color", addCoef.col="black")
+corrplot(cor(tr_cor_r), method="color", addCoef.col="black")
+
+#casual 변수 - temp, atemp, humidity, ,day, season, workingday, holyday
+#registered변수-humidity, temp, atemp, year, day,workingday ,holyday
+plot(trA$season, trA$casual)
+plot(trA$season, trA$registered)
+plot(trA$workingday, trA$casual)
+plot(trA$workingday, trA$registered)
+plot(trA$weather, trA$casual)
+plot(trA$weather, trA$registered)
+
+trA <- dftr
+testA <- dftest
+trA$season <- as.factor(trA$season)
+trA$holiday <- as.factor(trA$holiday)
+trA$workingday <- as.factor(trA$workingday)
+trA$weather <- as.factor(trA$weather)
+trA$datetime <- as.POSIXct(trA$datetime, format="%Y-%m-%d %H:%M:%S")
+
+testA$season <- as.factor(testA$season)
+testA$holiday <- as.factor(testA$holiday)
+testA$workingday <- as.factor(testA$workingday)
+testA$weather <- as.factor(testA$weather)
+testA$datetime <- as.POSIXct(testA$datetime, format="%Y-%m-%d %H:%M:%S")
+
+####파생변수 생성
+
+trA$hour = as.factor(substring(trA$datetime,12,13))
+trA$weekday <-strftime(trA$datetime, '%u') 
+trA$year <- strftime(trA$datetime, '%Y')
+
+####test데이터
+
+testA$hour = as.factor(substring(testA$datetime,12,13))
+testA$weekday <-strftime(testA$datetime, '%u') 
+testA$year <- strftime(testA$datetime, '%Y')
+
+trA_c <-trA[,-c(11,12)]
+trA_r <-trA[,-c(10,12)]
+trA_c <- trA_c[,-1]
+testA <- testA[,-1]
+str(trA)
+str(testA)
+lm_c<- lm(casual~., data=trA_c)
+lm_r<- lm(registered~., data=trA_r)
+
+rm_c = randomForest(casual~., data=trA_c, importance=T)
+rm_r = randomForest(registered~., data=trA_r, importance=T)
+
+
+
+plot(rm_c)
+plot(rm_r)
+plot(result)
+importance(rm_r)
+importance(result)
+result
+
+preval_c <- predict(lm_c, newdata=testA)
+preval_r <- predict(lm_r, newdata=testA)
+
+preval=preval_c+preval_r 
+preval_c
+preval_r
+preval[preval<=0] <- 0
+preval
+reddf$count <- preval
+write.csv(reddf, file="result_l1.csv", row.names=FALSE)
+getwd()
+
+plot(preval_c)
+plot(preval_r)

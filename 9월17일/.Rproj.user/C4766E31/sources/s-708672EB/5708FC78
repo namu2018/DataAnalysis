@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537151158363.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3461840351",
+    "id" : "5708FC78",
+    "lastKnownWriteTime" : 1537156686,
+    "last_content_update" : 1537156686143,
+    "path" : "~/choi_dontouch/R-basic/9월17일/데이터 정제하기.r",
+    "project_path" : "데이터 정제하기.r",
+    "properties" : {
+        "cursorPosition" : "43,7",
+        "scrollLine" : "44",
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
