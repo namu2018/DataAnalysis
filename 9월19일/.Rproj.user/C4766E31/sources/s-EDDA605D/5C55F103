@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537324398831.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5C55F103",
+    "lastKnownWriteTime" : 1537332672,
+    "last_content_update" : 1537332672091,
+    "path" : "~/choi_dontouch/R-basic/9월19일/함수사용.r",
+    "project_path" : "함수사용.r",
+    "properties" : {
+        "cursorPosition" : "60,15",
+        "scrollLine" : "41",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

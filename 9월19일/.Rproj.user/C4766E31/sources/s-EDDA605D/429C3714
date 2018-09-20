@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537402439325.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "227337138",
+    "id" : "429C3714",
+    "lastKnownWriteTime" : 1537418593,
+    "last_content_update" : 1537418593070,
+    "path" : "~/choi_dontouch/R-basic/9월20일/review.r",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "3,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

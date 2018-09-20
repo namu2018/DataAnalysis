@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537316431123.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1677334366",
+    "id" : "F193C814",
+    "lastKnownWriteTime" : 1537418592,
+    "last_content_update" : 1537418592943,
+    "path" : "C:/Users/ktm/Downloads/hospital.r",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "28,0",
+        "scrollLine" : "13"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

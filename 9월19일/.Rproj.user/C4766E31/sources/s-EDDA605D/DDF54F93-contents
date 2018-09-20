@@ -1,0 +1,74 @@
+getwd()
+setwd("C:/Users/ktm/Documents/choi_dontouch/data/hospital")
+hos <- read.csv("train_rm.csv")
+hos_test <- read.csv("test.csv")
+library(dplyr)
+library(sqldf)
+hos <- na.omit(hos)
+hos1
+str(hos1)
+names(hos1)
+hos1_07 <- hos[,c(1:31,56,58)]
+hos1_06 <- hos[,c(1:7,32:55,57,58)]
+names(hos1_07)
+str(hos1_07)
+hos1_07$ownerChange <- as.integer(hos1_07$ownerChange)
+
+clo <- sqldf('select * from hos  where OC=" close" ')
+
+hos07_cor <- cor(hos1_07)
+corrplot(hos07_cor)
+corrplot(cor(hos1_07), method="color", addCoef.col="black")
+hos1_07
+
+a <- hos[,c(1:8,16,32,40,56,57,58)]
+a$totalrev1 <- hos1$revenue1- hos1$salescost1
+a$totalrev2 <- hos1$revenue2 - hos1$salescost2
+a$no_pro1 <- a$totalrev1 - hos1$sga1
+a$no_pro2 <- a$totalrev2 - hos1$sga2
+a$dif_re <- hos1$revenue1 - hos1$revenue2
+a$dif_pr <- hos1$profit1 - hos1$profit2
+a$dif_emp <- as.integer(hos1$employee1) - as.integer(hos1$employee2)
+
+par(mfrow=c(3,3))
+plot(a$OC, a$revenue1)
+plot(a$OC, a$sgg)
+plot(a$OC, a$bedCount)
+plot(a$OC, a$revenue2)
+plot(a$OC, a$profit1)
+plot(a$OC, as.integer(a$employee1))
+plot(a$OC, a$employee1)
+plot(a$revenue2, a$employee2)
+plot(a$OC, a$totalrev1)
+plot(a$OC, a$no_pro1)
+plot(a$revenue1, a$no_pro1)
+plot(as.integer(a$OC), a$dif_emp)
+plot(as.integer(a$OC), a$dif_re)
+plot(a$dif_pr)
+str(a)
+
+hos <- sqldf('select * from hos where revenue1 < 30000000000')
+plot(hos$OC,hos$salescost1)
+plot(hos$OC,hos$sga1)
+plot(hos$OC, hos$interest1)# 둘간의 차이 ###
+plot(hos$OC, hos$ctax1)
+plot(hos$OC, hos$liquidAsset2)###년도차이다###
+plot(hos$OC, hos$quickAsset1)####   둘간의 차이           ###
+plot(hos$OC, hos$receivableS1)
+plot(hos$OC, hos$inventoryAsset1)##둘간의 차이      이
+plot(hos$OC, hos$nonCAsset1)####년도차이 
+#plot(hos$OC, hos$surplus2)
+plot(hos$OC, hos$longLoan1)###차이  년도차이
+###plot(hos$OC, hos$shortLoan2)
+##plot(hos$OC, hos$shortLoan1)##차이
+plot(hos$OC, hos$NCLiabilities1)###차이 both
+plot(hos$OC, hos$debt2)##차이남 년도차이
+plot(hos$OC, hos$debt1)
+plot(hos$OC, hos$salescost2)
+plot(hos$OC, as.integer(hos$employee2))###차이 많이남
+plot(hos$salary1, hos$employee1)
+plot(hos$revenue2, hos$employee2)
+
+
+plot(clo$revenue1, clo$revenue2)
+plot(clo#)

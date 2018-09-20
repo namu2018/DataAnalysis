@@ -1,0 +1,37 @@
+options("scipen" = 100)
+
+'''
+1.
+b <- hos1[,c(8:31)]
+names(hos1)
+str(b)
+cor_b=cor(b)
+corrplot(cor(b), method="color", addCoef.col="black")
+revenue에 따라서 높은 데이터를 자른다
+'''
+str(hos1)
+#inskind로 그룹핑 하여 자른다
+library(sqldf)
+table(hos$instkind)
+close <- sqldf('select sgg,count(sgg), avg(revenue1), avg(profit1) from hos where OC=" close"  group by sgg ')
+open <- sqldf('select instkind, count(instkind),avg(revenue1), avg(profit1) from hos where OC="open"  group by instkind ')
+
+hos1 <- sqldf('select * from hos1 where revenue1 < 30000000000')
+closel <- sqldf('select instkind, count(instkind),avg(revenue1), avg(profit1) from hos1 where OC=" close"  group by instkind ')
+openl <- sqldf('select instkind, count(instkind),avg(revenue1), avg(profit1) from hos1 where OC="open"  group by instkind ')
+
+sqldf('select instkind, count(instkind),sum(revenue1), sum(profit1) from hos where OC=" close"  group by instkind ')
+sqldf('select instkind, count(instkind),sum(revenue1), sum(profit1) from hos where OC="open"  group by instkind ')
+
+a <- hos[!is]
+
+close
+open
+
+sqldf('select instkind, median(employee1) from hos group by instkind')
+sqldf('select instkind, median(revenue1) from hos group by instkind')
+agv <- hos %>% group_by(hos$instkind) %>% summarize(mean=mean(hos$revenue1, na.rm=TRUE))
+mean(hos$revenue1)
+group_by(hos$instkind)
+summarize(mean_weight = mean(weight, na.rm = TRUE))
+agv

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537316925252.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E154B9B5",
+    "lastKnownWriteTime" : 1537332683,
+    "last_content_update" : 1537332683368,
+    "path" : "~/choi_dontouch/R-basic/9월19일/반복조건문.r",
+    "project_path" : "반복조건문.r",
+    "properties" : {
+        "cursorPosition" : "34,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

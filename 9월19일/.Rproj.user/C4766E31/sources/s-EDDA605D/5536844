@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537406987197.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5536844",
+    "lastKnownWriteTime" : 1537417978,
+    "last_content_update" : 1537417978775,
+    "path" : "~/choi_dontouch/R-basic/9월20일/level_randomforest.r",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "95,8",
+        "scrollLine" : "74",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

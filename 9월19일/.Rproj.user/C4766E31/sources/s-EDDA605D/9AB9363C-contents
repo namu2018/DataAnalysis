@@ -1,0 +1,66 @@
+NAProcess <- function(df_NA, sel, wantedVal="mean") {
+  # sel = c(1,5)
+  for (i in sel) {
+    type = class(df_NA[[i]])
+    
+    # mean으로 할지 median으로 할지
+    if (wantedVal=='mean') {
+      Val = mean( df_NA[[i]] , na.rm=T)
+      loc = which(is.na(df_NA[[i]]))   # 위치 확인
+    } else if (wantedVal=='median') {
+      Val = median( df_NA[[i]] , na.rm=T)
+      loc = which(is.na(df_NA[[i]]))   # 위치 확인 
+    } else if (wantedVal=='mode') {
+      Val = getmode(df_NA[[i]])
+      loc = which(is.na(df_NA[[i]]))   # 위치 확인
+    }
+    
+    # 자료형에 따른 값 치환
+    if (type=='numeric') {
+      df_NA[loc,i ] = as.numeric(Val)
+    } else if (type=='integer') {
+      df_NA[loc,i ] = as.integer(Val)
+    } else if (type=='factor') {
+      df_NA[loc,i ] = Val
+    }
+  }
+  return(df_NA)
+}
+
+
+colN = c("busan", "choongbuk", "choongnam", "daegu", "daejeon",
+         "gangwon", "gwangju", "gyeongbuk", "gyeonggi", "gyeongnam",
+         "incheon", "jeonbuk", "jeonnam", "sejong", "seoul",
+         "ulsan", "jeju")
+
+tr_a$sido = factor(tr_a$sido, levels = colN)
+test$sido = factor(test$sido, levels = colN)
+
+colN = c("", "clinic", "dental_clinic", "general_hospital", "hospital" ,
+         "nursing_hospital", "traditional_clinic", "traditional_hospital")
+
+tr_a$instkind = factor(tr_a$instkind, levels = colN)
+test$instkind = factor(test$instkind, levels = colN)
+
+levels(tr_a$sido)
+levels(test$sido)
+levels(tr_a$instkind)
+levels(test$instkind)
+
+
+#  randomForest 모델 만들기 
+library(dplyr)
+tr_sub <- select(tr, -ownerChange  )
+missmap(tr_sub)
+
+tr_sub_noNA <- tr_sub[!is.na(tr_sub$salary1), ]
+missmap(tr_sub_noNA)
+
+tr_sub_noNA$OC <- ifelse(tr_sub_noNA$OC=='open',1, 0)
+tr_sub_noNA$OC <- as.factor(tr_sub_noNA$OC)
+table(tr_sub_noNA$OC)
+library(randomForest)
+?randomForest
+set.seed(30)
+rf_model <- randomForest(factor(OC) ~ ., data=tr_sub_noNA, n_tree=100)
+
